@@ -1,0 +1,21 @@
+parameters:
+    ibnab_pmanager.view_element.pdftemplate.tab.general.template:        'IbnabPmanagerBundle:PDFTemplate:Tab/general.html.twig'
+    ibnab_pmanager.view_element.pdftemplate.tab.additional.template:     'IbnabPmanagerBundle:PDFTemplate:Tab/additional.html.twig'
+    ibnab_pmanager.view_element.pdftemplate.tab.interfaces.template:     'IbnabPmanagerBundle:PDFTemplate:Tab/interfaces.html.twig'
+
+services:
+    ibnab_pmanager.view_element.pdftemplate.tab.general:
+        parent: pim_enrich.view_element.base
+        arguments:
+            - 'ibnab.pmanager.pdftemplate.tab.general'
+            - '%ibnab_pmanager.view_element.pdftemplate.tab.general.template%'
+        tags:
+            - { name: pim_enrich.view_element, type: ibnab_pmanager_pdftemplate_form.form_tab, position: 90 }
+
+    ibnab_pmanager.view_element.pdftemplate.tab.additional:
+        parent: pim_enrich.view_element.base
+        arguments:
+            - 'ibnab.pmanager.pdftemplate.tab.additional'
+            - '%ibnab_pmanager.view_element.pdftemplate.tab.additional.template%'
+        tags:
+            - { name: pim_enrich.view_element, type: ibnab_pmanager_pdftemplate_form.form_tab, position: 100 }

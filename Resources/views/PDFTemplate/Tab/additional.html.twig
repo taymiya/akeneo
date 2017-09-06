@@ -1,0 +1,16 @@
+<div class="tab-pane {{ viewElement.loop.first ? 'active' : '' }}" id="{{ viewElement.alias|replace({' ': '-', '.': '-'})|lower }}">
+    <div class="AknFormContainer AknFormContainer--withPadding">
+                    {{ form_row(form.hf) }}
+                    {{ form_row(form.auteur) }}
+                    {{ form_row(form.direction) }}
+                    {{ form_row(form.font) }}
+                    {{ form_row(form.unit) }}
+                    {{ form_row(form.format) }}
+                    {{ form_row(form.orientation) }}
+                    {{ form_row(form.margintop) }}
+                    {{ form_row(form.marginleft) }}
+                    {{ form_row(form.marginright) }}
+                    {{ form_row(form.marginbottom) }}
+                    {{ form_row(form.autobreak) }}
+    </div>
+</div>

@@ -1,0 +1,6 @@
+extensions:
+    ibnab-pmanager-edit-form-get-pdf:            # The form extension code (can be whatever you want)
+        module: pmanager/form/product/getpdf     # The requirejs module we just created
+        parent: pim-product-edit-form-panels           # The parent extension in the form where we want to be registered
+        targetZone: panel-content
+        position: 10                           # The extension position (lower will be first)

@@ -1,0 +1,8 @@
+extensions:
+    oro-system-config-group-pmanager:
+        module: pmanager/form/system/config/group/allconfig
+        parent: oro-system-config-system
+        targetZone: content
+        position: 150
+
+

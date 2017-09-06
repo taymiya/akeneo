@@ -1,0 +1,44 @@
+services:
+    oro_config.controller.configuration:
+        class: '%oro_config.controller.configuration.class%'
+        arguments:
+            - '@oro_config.global'
+            - '@file_locator'
+            - '%pim_ui.loading_messages_file%'
+            -
+                -
+                    section: pim_localization
+                    name: language
+                -
+                    section: pim_analytics
+                    name: version_update
+                -
+                    section: pim_ui
+                    name: loading_message_enabled
+                -
+                    section: pim_ui
+                    name: loading_messages
+                -
+                    section: ibnab_pmanager
+                    name: textheader
+                -
+                    section: ibnab_pmanager
+                    name: logoupload
+                -
+                    section: ibnab_pmanager
+                    name: logosize
+                -
+                    section: ibnab_pmanager
+                    name: textheader
+                -
+                    section: ibnab_pmanager
+                    name: titleheader
+                -
+                    section: ibnab_pmanager
+                    name: marginheader
+                -
+                    section: ibnab_pmanager
+                    name: marginfooter
+                -
+                    section: ibnab_pmanager
+                    name: test                  

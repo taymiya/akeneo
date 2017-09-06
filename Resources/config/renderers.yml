@@ -1,0 +1,19 @@
+parameters:
+    ibnab_pdf_generator.renderer.product_pdf.class: Ibnab\Bundle\PmanagerBundle\Renderer\ProductPdfRenderer
+    media_dir:           '%kernel.root_dir%/../web/media'
+
+services:
+    ibnab_pdf_generator.renderer.product_pdf:
+        class: '%ibnab_pdf_generator.renderer.product_pdf.class%'
+        arguments:
+            - '@templating'
+            - '@pim_pdf_generator.builder.dompdf'
+            - '@liip_imagine.data.manager'
+            - '@liip_imagine.cache.manager'
+            - '@liip_imagine.filter.manager'
+            - 'PimPdfGeneratorBundle:Product:renderPdf.html.twig'
+            - '%upload_dir%'
+            - '%media_dir%'
+            - '%pim_pdf_generator_font%'
+        tags:
+            - { name: pim_pdf_generator.renderer, priority: 80 }

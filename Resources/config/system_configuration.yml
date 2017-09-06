@@ -1,0 +1,83 @@
+oro_system_configuration:
+    groups:
+        pdf_manager:
+            title: ibnab.pmanager.system_configuration.groups.title
+        pdf_manager_setting:
+            title: ibnab.pmanager.system_configuration.groups.settings.title
+            icon:  'fa-file'
+        pdf_manager_view:
+            title: ibnab.pmanager.system_configuration.groups.view.title
+    fields:
+        ibnab_pmanager.logosize:
+            data_type: integer
+            type: 'Symfony\Component\Form\Extension\Core\Type\IntegerType'
+            priority: 50
+            options:
+                label: ibnab.pmanager.system_configuration.fields.logosize.label
+                constraints:
+                    - NotBlank: ~
+                    - Range:
+                        min: 1
+                        max: 400
+        ibnab_pmanager.textheader:
+            data_type: string
+            type: textarea
+            priority: 40
+            options:
+                required: false
+                label: ibnab.pmanager.system_configuration.fields.textheader.label
+        ibnab_pmanager.logoupload:
+            data_type: string
+            type: 'Oro\Bundle\ConfigBundle\Form\Type\ConfigFileType'
+            priority: 60
+            options:
+                label: ibnab.pmanager.system_configuration.fields.logo.label
+                resettable: false
+                required: false
+                fileConstraints:
+                    - Image: ~
+        ibnab_pmanager.titleheader:
+            data_type: string
+            type: text
+            priority: 30
+            options:
+                required: false
+                label: ibnab.pmanager.system_configuration.fields.titleheader.label
+        ibnab_pmanager.marginheader:
+            data_type: integer
+            type: 'Symfony\Component\Form\Extension\Core\Type\IntegerType'
+            priority: 20
+            options:
+                label: ibnab.pmanager.system_configuration.fields.marginheader.label
+                constraints:
+                    - NotBlank: ~
+                    - Range:
+                        min: 1
+        ibnab_pmanager.marginfooter:
+            data_type: integer
+            type: 'Symfony\Component\Form\Extension\Core\Type\IntegerType'
+            priority: 10
+            options:
+                label: ibnab.pmanager.system_configuration.fields.marginfooter.label
+                constraints:
+                    - NotBlank: ~
+                    - Range:
+                        min: 1
+    tree:
+        system_configuration:
+            platform:
+                children:
+                    pdf_manager:
+                        children:
+                            pdf_manager_setting:
+                                priority: 400
+                                children:
+                                    pdf_manager_view:
+                                        priority: 600
+                                        children:
+                                            - ibnab_pmanager.logoupload
+                                            - ibnab_pmanager.logosize
+                                            - ibnab_pmanager.titleheader
+                                            - ibnab_pmanager.textheader
+                                            - ibnab_pmanager.marginheader
+                                            - ibnab_pmanager.marginfooter

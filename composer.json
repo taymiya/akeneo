@@ -1,0 +1,28 @@
+{
+    "name": "taymiya/akeneo",
+    "description": "Taymiya PDF Manager for Akeneo",
+    "homepage": "https://github.com/taymiya/akeneo.git",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Taymiya",
+            "homepage": "http://www.taymiya.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Ibnab\\Bundle\\PmanagerBundle": "src/"
+        }
+    },
+    "target-dir": "src/Ibnab/Bundle/PmanagerBundle",
+    "require": {
+        "php": ">=5.4.9"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}

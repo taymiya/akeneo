@@ -1,0 +1,24 @@
+<div class="AknCommentPanel">
+    
+
+            <form>
+                <div class="AknFieldContainer-header">
+                <label class="AknFieldContainer-label control-label" for="<%- code %>">
+                    <%- _.__('ibnab.pmanager.pdftemplate.getpdf.select.label') %>
+                </label>
+                </div>               
+                <div class="AknTextareaField">
+                <select class="select2" id="<%- code %>">
+                  <% if (pdfTemplates.length) { %>
+                    <% _.each(pdfTemplates, function(pdfTemplate) { %>
+                    <option value="<%- pdfTemplate.id %>"><%- pdfTemplate.name %></option>
+                    <% }); %>
+                  <% } %>
+                </select>
+                    </div>
+                <span class="AknButtonList AknButtonList AknButtonList--right pdf-buttons">
+                    <button class="AknButtonList-item AknButton AknButton--small AknButton--apply send-pdf"><%- _.__('ibnab.pmanager.pdftemplate.getpdf.submit') %></button>
+                </span>
+            </form>
+
+</div>

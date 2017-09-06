@@ -1,0 +1,41 @@
+<div class="tab-pane {{ viewElement.loop.first ? 'active' : '' }}" id="{{ viewElement.alias|replace({' ': '-', '.': '-'})|lower }}">
+    <div class="AknFormContainer AknFormContainer--withPadding">
+        {{ form_row(form.name) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.type) }}
+        {# form_row(form.entityName) #}
+        {{ form_row(form.css) }}
+        {{ form_row(form.family) }}
+
+        <div class="AknFieldContainer ibnab_pmanager_pdftemplate_content_container">
+            <div class="ibnab_pmanager_pdftemplate_content_place">
+                {{ form_widget(form.content) }}
+            </div>
+            <div class="ibnab_pmanager_pdftemplate_variable" id="ibnab_pmanager_pdftemplate_variable">
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<style>
+    .ibnab_pmanager_pdftemplate_content_container{
+        display: inline-block;
+        min-width: 1000px;
+    }
+    .ibnab_pmanager_pdftemplate_content_place{
+        float: left;
+        min-width: 500px;
+        max-width: 500px;
+    }
+    .ibnab_pmanager_pdftemplate_variable{
+        float: left;
+        margin-left: 50px;
+    }
+    .icon-picture-o:before {
+    content: "\f03e";
+    }
+    .icon-arrows-alt:before {
+        content: "\f0b2";
+    }
+</style>

@@ -1,0 +1,18 @@
+parameters:
+    ibnab_pmanager.pdftemplate.entity.class:           Ibnab\Bundle\PmanagerBundle\Entity\PDFTemplate
+    ibnab_pmanager.tcpdf.class: Ibnab\Bundle\PmanagerBundle\Controller\TCPDFController
+
+services:
+    #ibnab.twig_string_loader:
+        #class:        "Twig_Loader_String"
+    #ibnab.twig_string:
+        #class:        "%twig.class%"
+        #arguments:    [@ibnab.twig_string_loader, %twig.options% ]
+
+    ibnab_pmanager.tcpdf:
+        class: %ibnab_pmanager.tcpdf.class%
+        file: %ibnab_pmanager.file%
+        arguments:
+            - %ibnab_pmanager.class%
+        tags:
+            - { name: pmanager.tcpdf, alias: pmanager_tcpdf }

@@ -1,0 +1,16 @@
+{% extends 'PimEnrichBundle::layout.html.twig' %}
+{% import 'PimDataGridBundle::macros.html.twig' as dataGrid %}
+
+{% block content %}
+
+    {% set title = 'PDF template'|trans %}
+
+    {% set buttons %}
+        {{ elements.createBtn('pmanager', path('pmanager_template_create'), null, 'pmanager_template_create', 'plus') }}
+    {% endset %}
+
+    {{ elements.page_header(title, buttons) }}
+
+    {{ dataGrid.renderGrid('pmanager-pdftemplates', { }) }}
+
+{% endblock %}

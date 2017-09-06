@@ -1,0 +1,12 @@
+config:
+    
+    paths:
+        # Forms
+        pmanager/form/system/config/group/allconfig: ibnabpmanager/js/form/system/group/pmanager
+        # Templates
+        pmanager/template/system/group/allconfig: ibnabpmanager/js/templates/system/group/pmanager.html
+
+        # Forms
+        pmanager/form/product/getpdf: ibnabpmanager/js/form/product/get-pdf
+        # Templates
+        pmanager/product/get-pdf: ibnabpmanager/templates/product/get-pdf.html
